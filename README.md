@@ -35,11 +35,11 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :category_id
-- belongs_to :condition_id
-- belongs_to :shipping_id
-- belongs_to :prefecture_id
-- belongs_to :days_to_ship_id
+- belongs_to :category
+- belongs_to :condition
+- belongs_to :shipping
+- belongs_to :prefecture
+- belongs_to :days_to_ship
 - has_one :order
 
 ## orders table
@@ -57,16 +57,17 @@
 
 ## addresses table
 
-| Column        | Type    | Options                        |
-|---------------|---------|--------------------------------|
-| postal_code   | string  | null: false                    |
-| prefecture_id | integer | null: false                    |
-| city          | string  | null: false                    |
-| block         | string  | null: false                    |
-| building      | string  |                                |
-| phone_number  | string  | null: false                    |
+| Column        | Type       | Options                        |
+|---------------|------------|--------------------------------|
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| block         | string     | null: false                    |
+| building      | string     |                                |
+| phone_number  | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :order
-- belongs_to :prefecture_id
+- belongs_to :prefecture
