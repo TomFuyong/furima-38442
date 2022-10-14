@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :orders
 
   validates :password,
             format: { with: /\A(?=.*?[a-z])(?=.*?[0-9])[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }
